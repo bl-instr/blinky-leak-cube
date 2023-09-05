@@ -69,7 +69,7 @@ def connectWifi(timeoutIn=20, chitChat=False, country='SE'):
 
 def oneShotMqttPublish(wlan, msg, chitChat=False, keepalive=0):
     if wlan == None: return None
-    client_id   = hexlify(unique_id())
+    client_id   = creds['box'] + "-" + creds['trayName'] + "-" + creds['trayType']
     topic = creds['box']
     topic = topic + "/" + creds['cubeType']
     topic = topic + "/" + creds['trayType']

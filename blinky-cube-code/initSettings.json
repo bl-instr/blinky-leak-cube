@@ -1,1 +1,1 @@
-{"adcSamples": 2000, "mqttKeepalive": 5, "watchdog": 840, "deepSleepTime": 3600000, "wifiTimeout": 30}
+{"adcSamples": 2000, "mqttKeepalive": 5, "watchdog": 1, "deepSleepTime": 600000, "wifiTimeout": 30}
