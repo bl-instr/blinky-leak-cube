@@ -1,3 +1,5 @@
+boolean printDiagnostics = false;
+
 union CubeData
 {
   struct
@@ -31,8 +33,8 @@ float fsamples = 2000;
 void setupServerComm()
 {
   // Optional setup to overide defaults
-//  Serial.begin(115200);
-  BlinkyPicoWCube.setChattyCathy(false);
+  if (printDiagnostics) Serial.begin(115200);
+  BlinkyPicoWCube.setChattyCathy(printDiagnostics);
   BlinkyPicoWCube.setWifiTimeoutMs(20000);
   BlinkyPicoWCube.setWifiRetryMs(20000);
   BlinkyPicoWCube.setMqttRetryMs(3000);
@@ -91,15 +93,17 @@ void readSensor()
   cubeData.sensor2 = (int16_t) (fsensor2 * 8.0);
   cubeData.sensor3 = (int16_t) (fsensor3 * 8.0);
 
-/*
-  Serial.print(cubeData.chipTemp);
-  Serial.print(",");
-  Serial.print(cubeData.sensor1);
-  Serial.print(",");
-  Serial.print(cubeData.sensor2);
-  Serial.print(",");
-  Serial.println(cubeData.sensor3);
-*/
+  if (printDiagnostics)
+  {
+    Serial.print(cubeData.chipTemp);
+    Serial.print(",");
+    Serial.print(cubeData.sensor1);
+    Serial.print(",");
+    Serial.print(cubeData.sensor2);
+    Serial.print(",");
+    Serial.println(cubeData.sensor3);
+  }
+
 }
 
 
