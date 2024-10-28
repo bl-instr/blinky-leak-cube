@@ -95,6 +95,7 @@ void readSensor()
 
   if (printDiagnostics)
   {
+/*
     Serial.print(cubeData.chipTemp);
     Serial.print(",");
     Serial.print(cubeData.sensor1);
@@ -102,6 +103,7 @@ void readSensor()
     Serial.print(cubeData.sensor2);
     Serial.print(",");
     Serial.println(cubeData.sensor3);
+*/
   }
 
 }
